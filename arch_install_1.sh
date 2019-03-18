@@ -1,4 +1,4 @@
-USER="st"
+USER="shutikeen"
 DISK="sdb"
 B_DISK="sdb1"
 R_DISK="sdb2"
@@ -23,13 +23,14 @@ timedatectl set-ntp true
   echo;
   echo;
   echo;
-  echo +40G;
+  echo;
+#  echo +20G;
 
-  echo n;
-  echo;
-  echo;
-  echo;
-  echo +2048M;
+#  echo n;
+#  echo;
+#  echo;
+#  echo;
+#  echo +2048M;
 
   echo n;
   echo p;

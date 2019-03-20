@@ -50,6 +50,6 @@ pacman -S --noconfirm --needed $xorg_install
 echo
 pacman -S --noconfirm --needed dialog wpa_supplicant
 echo
-pacman -S --noconfirm --needed wget curl networkmanager
+pacman -S --noconfirm --needed wget curl networkmanager openssh
 echo
 systemctl enable NetworkManager.service

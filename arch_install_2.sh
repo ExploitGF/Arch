@@ -1,5 +1,5 @@
 USER="shurikeen"
-DISK="sdb"
+DISK="sda"
 
 
 echo "arch" > /etc/hostname

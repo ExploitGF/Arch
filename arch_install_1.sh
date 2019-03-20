@@ -1,9 +1,9 @@
 USER="shutikeen"
-DISK="sdb"
-B_DISK="sdb1"
-R_DISK="sdb2"
-S_DISK="sdb3"
-H_DISK="sdb4"
+DISK="sda"
+B_DISK="sda1"
+R_DISK="sda2"
+S_DISK="sda3"
+H_DISK="sda4"
 
 loadkeys ru
 setfont cyr-sun16

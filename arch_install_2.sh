@@ -52,6 +52,8 @@ pacman -S --noconfirm --needed dialog wpa_supplicant
 echo
 pacman -S --noconfirm --needed wget curl networkmanager openssh
 echo
+pacman -S --noconfirm --needed i3 dmenu
+echo
 pacman -S --noconfirm --needed xfce4-panel xfce4-terminal thunar chromium lxdm gtk-engines mousepad slim gvfs
 echo
 systemctl enable NetworkManager.service

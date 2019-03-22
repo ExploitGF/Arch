@@ -56,5 +56,31 @@ pacman -S --noconfirm --needed i3 dmenu
 echo
 pacman -S --noconfirm --needed xfce4-panel xfce4-terminal thunar chromium lxdm gtk-engines mousepad slim gvfs
 echo
+# Установка AUR
+sudo pacman -Sy --noconfirm --needed curl git go
+
+if [[ ! $(command -v yay) ]]
+then
+  echo "Installing Yay. Download pkg.sh"
+  cd /tmp
+  git clone https://aur.archlinux.org/yay.git
+  cd yay
+  makepkg -si
+  cd -
+  yay -Sy --noconfirm
+  echo
+  echo "${bold}Install Yay: yes.${normal}"
+  echo
+fi
+echo
+echo "Up user dirs"
+xdg-user-dirs-update
+echo
+echo "Starting services"
+echo
+sudo systemctl enable ntpd.service
+# sudo systemctl enable lxdm.service
+sudo systemctl enable acpid.service
+sudo systemctl enable nscd.service
 systemctl enable NetworkManager.service
 systemctl enable sshd

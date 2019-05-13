@@ -51,10 +51,10 @@ echo
 pacman -S --noconfirm --needed dialog wpa_supplicant
 echo
 pacman -S --noconfirm --needed wget curl networkmanager openssh
-echo
-pacman -S --noconfirm --needed i3 dmenu
-echo
-pacman -S --noconfirm --needed xfce4-panel xfce4-terminal thunar chromium lxdm gtk-engines mousepad gvfs
+#echo
+#pacman -S --noconfirm --needed i3 dmenu
+#echo
+#pacman -S --noconfirm --needed xfce4-panel xfce4-terminal thunar chromium lxdm gtk-engines mousepad gvfs
 echo
 # Установка AUR
 sudo pacman -Sy --noconfirm --needed curl git go
@@ -82,5 +82,5 @@ sudo systemctl enable ntpd.service
 # sudo systemctl enable lxdm.service
 sudo systemctl enable acpid.service
 sudo systemctl enable nscd.service
-systemctl enable NetworkManager.service
+#systemctl enable NetworkManager.service
 systemctl enable sshd

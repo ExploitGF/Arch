@@ -52,7 +52,7 @@ pacman -S --noconfirm --needed dialog wpa_supplicant
 echo
 pacman -S --noconfirm --needed wget curl networkmanager openssh
 #echo
-#pacman -S --noconfirm --needed i3 dmenu
+pacman -S --noconfirm --needed cmake make
 #echo
 #pacman -S --noconfirm --needed xfce4-panel xfce4-terminal thunar chromium lxdm gtk-engines mousepad gvfs
 echo
@@ -62,7 +62,8 @@ sudo pacman -Sy --noconfirm --needed curl git go
 if [[ ! $(command -v yay) ]]
 then
   echo "Installing Yay. Download pkg.sh"
-  cd /tmp
+  mkdir -p /home/$USER/tmp
+  cd /home/$USER/tmp
   git clone https://aur.archlinux.org/yay.git
   cd yay
   makepkg -si

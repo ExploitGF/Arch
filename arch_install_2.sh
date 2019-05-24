@@ -1,5 +1,6 @@
 USER="shurikeen"
 DISK="sda"
+DISK1="sda1"
 
 
 echo "arch" > /etc/hostname
@@ -25,11 +26,10 @@ pacman -Syy
 #GRUB
 #pacman -S --noconfirm --needed grub
 pacman -S --noconfirm --needed grub efibootmgr dosfstools os-prober mtools
-grub-install /dev/$DISK
 echo
 mkdir /boot/EFI
 echo
-mount /dev/$DISK /boot/EFI
+mount /dev/$DISK1 /boot/EFI
 echo
 grub-install --target=x86_64-efi  --bootloader-id=grub_uefi --recheck
 echo

@@ -52,8 +52,8 @@ mkfs.ext4  /dev/$R_DISK -L root
 #mkfs.ext4  /dev/$H_DISK -L home
 
 mount /dev/$R_DISK /mnt
-mkdir /mnt/{EFI,home}
-mount /dev/$B_DISK /mnt/EFI
+mkdir /mnt/{boot,home}
+#mount /dev/$B_DISK /mnt/boot
 #swapon /dev/$S_DISK
 #mount /dev/$H_DISK /mnt/home
 

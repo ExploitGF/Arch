@@ -38,7 +38,9 @@ timedatectl set-ntp true
   echo;
   echo a;
   echo 1;
-
+  echo t;
+  echo 1;
+  echo ef;
   echo w;
 ) | fdisk /dev/$DISK
 

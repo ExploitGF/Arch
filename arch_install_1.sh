@@ -46,7 +46,7 @@ timedatectl set-ntp true
 
 fdisk -l
 
-mkfs.ext2  /dev/$B_DISK -L boot
+mkfs.fat -FAT32  /dev/$B_DISK -L boot
 mkfs.ext4  /dev/$R_DISK -L root
 #mkswap /dev/$S_DISK -L swap
 #mkfs.ext4  /dev/$H_DISK -L home

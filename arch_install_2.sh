@@ -22,8 +22,16 @@ echo
 passwd
 echo
 pacman -Syy
-pacman -S --noconfirm --needed grub
+#GRUB
+#pacman -S --noconfirm --needed grub
+pacman -S --noconfirm --needed grub efibootmgr dosfstools os-prober mtools
 grub-install /dev/$DISK
+echo
+mkdir /boot/EFI
+echo
+mount /dev/$DISK /boot/EFI
+echo
+grub-install --target=x86_64-efi  --bootloader-id=grub_uefi --recheck
 echo
 grub-mkconfig -o /boot/grub/grub.cfg
 echo
@@ -37,16 +45,16 @@ echo
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 echo
 pacman -Syy
+#echo
+#echo "Arch Linux Virtualbox"
+#read -p "1 - Yes, 0 - No: " xorg_setting
+#if [[ $xorg_setting == 0 ]]; then
+#  xorg_install="xorg-server xorg-apps xorg-xinit"
+#elif [[ $xorg_setting == 1 ]]; then
+#  xorg_install="xorg-server xorg-apps xorg-xinit virtualbox-guest-utils"
+#fi
 echo
-echo "Arch Linux Virtualbox"
-read -p "1 - Yes, 0 - No: " xorg_setting
-if [[ $xorg_setting == 0 ]]; then
-  xorg_install="xorg-server xorg-apps xorg-xinit"
-elif [[ $xorg_setting == 1 ]]; then
-  xorg_install="xorg-server xorg-apps xorg-xinit virtualbox-guest-utils"
-fi
-echo
-pacman -S --noconfirm --needed $xorg_install
+pacman -S --noconfirm --needed pacman -S --noconfirm --needed
 echo
 pacman -S --noconfirm --needed dialog wpa_supplicant
 echo
@@ -59,20 +67,20 @@ echo
 # Установка AUR
 sudo pacman -Sy --noconfirm --needed curl git go
 
-if [[ ! $(command -v yay) ]]
-then
-  echo "Installing Yay. Download pkg.sh"
-  mkdir -p /home/$USER/tmp
-  cd /home/$USER/tmp
-  git clone https://aur.archlinux.org/yay.git
-  cd yay
-  makepkg -si
-  cd -
-  yay -Sy --noconfirm
-  echo
-  echo "${bold}Install Yay: yes.${normal}"
-  echo
-fi
+#if [[ ! $(command -v yay) ]]
+#then
+#  echo "Installing Yay. Download pkg.sh"
+#  mkdir -p /home/$USER/tmp
+#  cd /home/$USER/tmp
+#  git clone https://aur.archlinux.org/yay.git
+#  cd yay
+#  makepkg -si
+#  cd -
+#  yay -Sy --noconfirm
+#  echo
+#  echo "${bold}Install Yay: yes.${normal}"
+#  echo
+#fi
 echo
 echo "Up user dirs"
 xdg-user-dirs-update
@@ -83,5 +91,6 @@ sudo systemctl enable ntpd.service
 # sudo systemctl enable lxdm.service
 sudo systemctl enable acpid.service
 sudo systemctl enable nscd.service
+sudo systemctl enable dhcpcd.service
 #systemctl enable NetworkManager.service
 systemctl enable sshd

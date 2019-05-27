@@ -33,7 +33,6 @@ timedatectl set-ntp true
   echo n;
   echo;
   echo;
-  echo;
   echo +1G;
 
 #  echo n;
@@ -50,7 +49,7 @@ timedatectl set-ntp true
 #  echo +2048M;
 
   echo n;
-  echo p;
+  echo;
   echo;
   echo;
   echo a;

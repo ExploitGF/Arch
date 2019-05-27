@@ -34,8 +34,6 @@ timedatectl set-ntp true
   echo;
   echo;
   echo;
-  echo a;
-  echo 1;
   echo t;
   echo 1;
   echo 1;

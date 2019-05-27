@@ -44,14 +44,14 @@ timedatectl set-ntp true
 
 #fdisk -l
 
-mkfs.vfat -F32 -n "BOOT_FS" /dev/sda1
-mkfs.ext4 -L "ROOT_FS" /dev/sda2
+mkfs.vfat -F32 -n "BOOT_FS" /dev/$DISK1
+mkfs.ext4 -L "ROOT_FS" /dev/$DISK2
 #mkswap /dev/$S_DISK -L swap
 #mkfs.ext4  /dev/$H_DISK -L home
 
-mount /dev/sda2 /mnt
+mount /dev/$DISK2 /mnt
 mkdir /mnt/{boot,home}
-mount /dev/sda1 /mnt/boot
+mount /dev/$DISK1 /mnt/boot
 
 
 pacman -Sy --noconfirm --needed reflector

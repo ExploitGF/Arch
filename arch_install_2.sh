@@ -27,10 +27,6 @@ pacman -Syy
 #pacman -S --noconfirm --needed grub
 pacman -S --noconfirm --needed grub efibootmgr dosfstools os-prober mtools
 echo
-mkdir /boot/EFI
-echo
-mount /dev/$DISK1 /boot/EFI
-echo
 bootctl install
 echo
 cat >> /boot/loader/loader.conf << EOF
@@ -39,10 +35,13 @@ default arch
   
 EOF
 echo
+cat >> /boot/loader/entries/arch.conf << EOF
 title ArchLinux
 linux /vmlinuz-linux
 initrd /initramfs-linux.img
 options root=/dev/sda3 rw
+  
+EOF
 echo
 useradd -m -g users -G wheel -s /bin/bash $USER
 echo

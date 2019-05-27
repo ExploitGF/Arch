@@ -1,23 +1,40 @@
-USER="shutikeen"
+USER="shurikeen"
 DISK="sda"
-B_DISK="sda1"
-R_DISK="sda2"
-S_DISK="sda3"
-H_DISK="sda4"
+DISK1="sda1"
+DISK2="sda2"
+DISK3="sda3"
+DISK4="sda4"
 
 loadkeys ru
 setfont cyr-sun16
 
 timedatectl set-ntp true
+(
+  echo d;
+  echo;
+  echo d;
+  echo;
+  echo d;
+  echo;
+  echo d;
+  echo;
+  echo w;
+  echo;
+) | fdisk /dev/$DISK
 
-#(
-#  echo o;
+(
+  echo w;
+  echo;
+  echo Y;
+  echo;
+) |gdisk /dev/$DISK
 
-#  echo n;
-#  echo;
-#  echo;
-#  echo;
-#  echo +512M;
+(
+  echo n;
+  echo;
+  echo;
+  echo;
+  echo +1G;
 
 #  echo n;
 #  echo;
@@ -32,17 +49,17 @@ timedatectl set-ntp true
 #  echo;
 #  echo +2048M;
 
-#  echo n;
-#  echo p;
-#  echo;
-#  echo;
-#  echo a;
-#  echo 1;
-#  echo t;
-#  echo 1;
-#  echo ef;
-#  echo w;
-#) | fdisk /dev/$DISK
+  echo n;
+  echo p;
+  echo;
+  echo;
+  echo a;
+  echo 1;
+  echo t;
+  echo 1;
+  echo ef;
+  echo w;
+) | fdisk /dev/$DISK
 
 #fdisk -l
 
@@ -65,4 +82,4 @@ genfstab -pU /mnt >> /mnt/etc/fstab
 
 
 #arch-chroot /mnt
-#arch-chroot /mnt sh -c "$(curl -fsSL https://raw.githubusercontent.com/ExploitGF/Arch/master/arch_install_2.sh)"
+arch-chroot /mnt sh -c "$(curl -fsSL https://raw.githubusercontent.com/ExploitGF/Arch/master/arch_install_2.sh)"

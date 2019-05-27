@@ -10,26 +10,8 @@ setfont cyr-sun16
 
 timedatectl set-ntp true
 (
-  echo d;
+  echo g;
   echo;
-  echo d;
-  echo;
-  echo d;
-  echo;
-  echo d;
-  echo;
-  echo w;
-  echo;
-) | fdisk /dev/$DISK
-
-(
-  echo w;
-  echo;
-  echo Y;
-  echo;
-) |gdisk /dev/$DISK
-
-(
   echo n;
   echo;
   echo;

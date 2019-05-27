@@ -31,10 +31,18 @@ mkdir /boot/EFI
 echo
 mount /dev/$DISK1 /boot/EFI
 echo
-grub-install --target=x86_64-efi  --bootloader-id=grub_uefi --recheck
+bootctl install
 echo
-grub-mkconfig -o /boot/grub/grub.cfg
+cat >> /boot/loader/loader.conf << EOF
+timeout 4
+default arch
+  
+EOF
 echo
+title ArchLinux
+linux /vmlinuz-linux
+initrd /initramfs-linux.img
+options root=/dev/sda3 rw
 echo
 useradd -m -g users -G wheel -s /bin/bash $USER
 echo

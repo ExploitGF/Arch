@@ -1,7 +1,9 @@
 USER="shurikeen"
 DISK="sda"
 DISK1="sda1"
-
+DISK2="sda2"
+DISK3="sda3"
+DISK4="sda4"
 
 echo "arch" > /etc/hostname
 echo
@@ -39,7 +41,7 @@ cat >> /boot/loader/entries/arch.conf << EOF
 title ArchLinux
 linux /vmlinuz-linux
 initrd /initramfs-linux.img
-options root=/dev/sda3 rw
+options root=/dev/$DISK2 rw
   
 EOF
 echo

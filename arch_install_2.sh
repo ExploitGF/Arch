@@ -20,7 +20,7 @@ ln -svf /usr/share/zoneinfo/Asia/Yaketerinburg /etc/localtime
 #echo "KEYMAP=ru" >> /etc/vconsole.conf
 #echo "FONT=cyr-sun16" >> /etc/vconsole.conf
 #echo
-mkinitcpio -p linux
+/sbin/mkinitcpio -p linux
 echo
 passwd
 echo

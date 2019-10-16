@@ -20,7 +20,6 @@ ln -svf /usr/share/zoneinfo/Asia/Yaketerinburg /etc/localtime
 #echo "KEYMAP=ru" >> /etc/vconsole.conf
 #echo "FONT=cyr-sun16" >> /etc/vconsole.conf
 #echo
-/sbin/mkinitcpio -p linux
 echo
 passwd
 echo
@@ -103,3 +102,5 @@ sudo systemctl enable nscd.service
 sudo systemctl enable dhcpcd.service
 #systemctl enable NetworkManager.service
 systemctl enable sshd
+echo
+mkinitcpio -p linux

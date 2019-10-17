@@ -21,6 +21,8 @@ ln -svf /usr/share/zoneinfo/Asia/Yaketerinburg /etc/localtime
 #echo "FONT=cyr-sun16" >> /etc/vconsole.conf
 #echo
 echo
+mkinitcpio -p linux
+echo
 passwd
 echo
 pacman -Syy
@@ -102,5 +104,5 @@ sudo systemctl enable nscd.service
 sudo systemctl enable dhcpcd.service
 #systemctl enable NetworkManager.service
 systemctl enable sshd
-echo
-mkinitcpio -p linux
+
+

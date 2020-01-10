@@ -1,9 +1,9 @@
 USER="shurikeen"
-DISK="sda"
-DISK1="sda1"
-DISK2="sda2"
-DISK3="sda3"
-DISK4="sda4"
+DISK="sdb"
+DISK1="sdb1"
+DISK2="sdb2"
+DISK3="sdb3"
+DISK4="sdb4"
 
 echo "arch" > /etc/hostname
 echo

@@ -3,10 +3,10 @@ read -p "Enter DISK(sda or sdb): " hdd
 
 USER="$username"
 DISK="$hdd"
-DISK1="$hdd1"
-DISK2="$hdd2"
-DISK3="$hdd3"
-DISK4="$hdd4"
+DISK1=${hdd}'1'
+DISK2=${hdd}'2'
+DISK3=${hdd}'3'
+DISK4=${hdd}'4'
 
 loadkeys ru
 setfont cyr-sun16

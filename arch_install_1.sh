@@ -1,4 +1,3 @@
-read -p "Enter username: " username
 read -p "Enter DISK(sda or sdb): " hdd
 
 USER="$username"

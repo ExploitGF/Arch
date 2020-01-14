@@ -1,11 +1,15 @@
-USER="shurikeen"
-DISK="sda"
-DISK1="sda1"
-DISK2="sda2"
-DISK3="sda3"
-DISK4="sda4"
+read -p "Enter username: " username
+read -p "Enter hostname: " host
+read -p "Enter DISK(sda or sdb): " hdd
 
-echo "arch" > /etc/hostname
+USER="$username"
+DISK="$hdd"
+DISK1=${hdd}'1'
+DISK2=${hdd}'2'
+DISK3=${hdd}'3'
+DISK4=${hdd}'4'
+
+echo "$host" > /etc/hostname
 echo
 ln -svf /usr/share/zoneinfo/Asia/Yaketerinburg /etc/localtime
 # Для Русского языка раскоментируем ниже

@@ -1,9 +1,9 @@
-USER="$username"
-DISK="$hdd"
-DISK1=${hdd}'1'
-DISK2=${hdd}'2'
-DISK3=${hdd}'3'
-DISK4=${hdd}'4'
+USER="shurikeen"
+DISK="sda"
+DISK1="sda1"
+DISK2="sda2"
+DISK3="sda3"
+DISK4="sda4"
 
 echo "arch" > /etc/hostname
 echo
@@ -75,7 +75,7 @@ pacman -S --noconfirm --needed cmake make
 #pacman -S --noconfirm --needed xfce4-panel xfce4-terminal thunar chromium lxdm gtk-engines mousepad gvfs
 echo
 # Установка AUR
-sudo pacman -Sy --noconfirm --needed curl git go
+sudo pacman -Sy --noconfirm --needed curl git go xdg-user-dirs
 
 #if [[ ! $(command -v yay) ]]
 #then

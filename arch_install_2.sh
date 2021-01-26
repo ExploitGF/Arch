@@ -101,11 +101,11 @@ xdg-user-dirs-update
 echo
 echo "Starting services"
 echo
-sudo systemctl enable ntpd.service
+systemctl enable ntpd.service
 # sudo systemctl enable lxdm.service
-sudo systemctl enable acpid.service
-sudo systemctl enable nscd.service
-sudo systemctl enable dhcpcd.service
+systemctl enable acpid.service
+systemctl enable nscd.service
+systemctl enable dhcpcd.service
 #systemctl enable NetworkManager.service
 systemctl enable sshd
 

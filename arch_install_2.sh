@@ -44,8 +44,8 @@ EOF
 echo
 cat >> /boot/loader/entries/arch.conf << EOF
 title ArchLinux
-linux /vmlinuz-linux
-initrd /initramfs-linux.img
+linux /vmlinuz-linux-lts
+initrd /initramfs-linux-lts.img
 options root=/dev/$DISK2 rw
   
 EOF

@@ -58,7 +58,7 @@ mount /dev/$DISK1 /mnt/boot
 pacman -Sy --noconfirm --needed reflector
 sudo reflector -c "Belarus" -c "Russia" -c "Ukraine" -c "Poland" -f 20 -l 20 -p https -p http -n 20 --save /etc/pacman.d/mirrorlist --sort rate
 
-pacstrap /mnt base base-devel linux linux-firmware nano mc
+pacstrap /mnt base base-devel linux-lts linux-firmware nano mc
 
 genfstab -pU /mnt >> /mnt/etc/fstab
 

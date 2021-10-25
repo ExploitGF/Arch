@@ -4,10 +4,10 @@ read -p "Enter DISK(sda or sdb): " hdd
 
 USER="$username"
 DISK="$hdd"
-DISK1=${hdd}'1'
-DISK2=${hdd}'2'
-DISK3=${hdd}'3'
-DISK4=${hdd}'4'
+DISK1=${hdd}'p1'
+DISK2=${hdd}'p2'
+DISK3=${hdd}'p3'
+DISK4=${hdd}'p4'
 
 echo "$host" > /etc/hostname
 echo

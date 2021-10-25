@@ -107,6 +107,6 @@ systemctl enable acpid.service
 systemctl enable nscd.service
 systemctl enable dhcpcd.service
 #systemctl enable NetworkManager.service
-systemctl enable sshd
+#systemctl enable sshd
 
 

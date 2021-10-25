@@ -25,14 +25,14 @@ ln -svf /usr/share/zoneinfo/Asia/Yaketerinburg /etc/localtime
 #echo "FONT=cyr-sun16" >> /etc/vconsole.conf
 #echo
 echo
-mkinitcpio -p linux
+mkinitcpio -p linux-lts
 echo
 passwd
 echo
 pacman -Syy
 #GRUB
 #pacman -S --noconfirm --needed grub
-pacman -S --noconfirm --needed grub efibootmgr dosfstools os-prober mtools
+pacman -S --noconfirm --needed grub efibootmgr dosfstools os-prober mtools iwd
 echo
 bootctl install
 echo

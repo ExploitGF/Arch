@@ -37,7 +37,7 @@ echo
 bootctl install
 echo
 cat >> /boot/loader/loader.conf << EOF
-timeout 4
+timeout 0
 default arch
   
 EOF

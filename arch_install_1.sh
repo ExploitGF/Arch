@@ -1,4 +1,4 @@
-read -p "Enter DISK(sda or sdb): " hdd
+read -p "Enter DISK(sda,hdd, nvme0n1): " hdd
 
 USER="$username"
 DISK="$hdd"
@@ -17,7 +17,7 @@ timedatectl set-ntp true
   echo n;
   echo;
   echo;
-  echo +512M;
+  echo +1G;
 
 #  echo n;
 #  echo;

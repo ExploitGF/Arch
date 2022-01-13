@@ -1,29 +1,29 @@
 read -p "Enter username: " username
 read -p "Enter hostname: " host
-read -p "Enter DISK(sda or sdb): " hdd
+# read -p "Enter DISK(sda or sdb): " hdd
 
 USER="$username"
-DISK="$hdd"
-DISK1=${hdd}'p1'
-DISK2=${hdd}'p2'
-DISK3=${hdd}'p3'
-DISK4=${hdd}'p4'
+# DISK="$hdd"
+# DISK1=${hdd}'p1'
+# DISK2=${hdd}'p2'
+# DISK3=${hdd}'p3'
+# DISK4=${hdd}'p4'
 
 echo "$host" > /etc/hostname
 echo
 ln -svf /usr/share/zoneinfo/Asia/Yaketerinburg /etc/localtime
 # Для Русского языка раскоментируем ниже
-#echo
-#echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
-#echo "ru_RU.UTF-8 UTF-8" >> /etc/locale.gen 
-#echo
-#locale-gen
-#echo
-#echo "LANG="ru_RU.UTF-8"" > /etc/locale.conf
-#echo
+echo
+echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
+echo "ru_RU.UTF-8 UTF-8" >> /etc/locale.gen 
+echo
+locale-gen
+echo
+echo "LANG="ru_RU.UTF-8"" > /etc/locale.conf
+echo
 #echo "KEYMAP=ru" >> /etc/vconsole.conf
-#echo "FONT=cyr-sun16" >> /etc/vconsole.conf
-#echo
+echo "FONT=cyr-sun16" >> /etc/vconsole.conf
+echo
 echo
 mkinitcpio -p linux-lts
 echo
@@ -46,7 +46,7 @@ cat >> /boot/loader/entries/arch.conf << EOF
 title ArchLinux
 linux /vmlinuz-linux-lts
 initrd /initramfs-linux-lts.img
-options root=/dev/$DISK2 rw
+options root=/dev/nvme0n1p3 rw
   
 EOF
 echo
